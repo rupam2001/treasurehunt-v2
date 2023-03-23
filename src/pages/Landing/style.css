@@ -1,0 +1,30 @@
+.container-main {
+  padding: 0.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-main h1 {
+  flex: 1;
+  text-align: center;
+  color: red;
+}
+
+.container-main button {
+  font-size: x-large;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 30vh;
+  padding: 0.5rem;
+  width: 100vw;
+}
+
+.main {
+  background-image: url(https://i.pinimg.com/originals/1d/6d/a3/1d6da3f24f8286f8e4890e34f791e41d.gif);
+  height: 100vh;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100% 100%;
+  padding: 5rem 3rem;
+}

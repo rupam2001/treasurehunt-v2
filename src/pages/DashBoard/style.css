@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+
+.container {
+  padding: 1.5rem;
+}
+
+.container h1,
+h5 {
+  font-family: "Neucha", cursive;
+  text-align: center;
+}
+
+.container-story {
+  /* padding: 1rem; */
+  word-break: break-all;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.unlockedline {
+  text-decoration: underline;
+  color: dodgerblue;
+}
+
+.container-story span {
+  color: rgb(148, 114, 3);
+  font-weight: 800;
+  line-height: 1.8rem;
+  font-family: "Neucha", cursive;
+}
+.congo {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 3rem;
+  color: rgba(236, 50, 8, 0.764);
+}
+
+.top-bar {
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+.top-bar h4 {
+  margin: 0 !important;
+  color: white;
+}
+
+.map {
+  width: 100vw;
+  overflow: scroll;
+}
+.footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
