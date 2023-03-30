@@ -1,7 +1,7 @@
 // export const ENDPOINT = "http://192.168.29.238:5000";
 // export const ENDPOINT = "https://treasurehunt-glug.herokuapp.com";
-export const ENDPOINT = 'http://localhost:80'
-// export const ENDPOINT = 'http://52.64.109.183'
+// export const ENDPOINT = 'http://localhost:80'
+export const ENDPOINT = 'http://52.64.109.183'
 
 export const StoryText = `
     Once upon a time there was a Man in search of the Phoenix Bird. He came to JEC and entered to the old bulding.
