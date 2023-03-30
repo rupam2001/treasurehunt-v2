@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+@import url('https://fonts.googleapis.com/css?family=Alkatra');
+
+
+
+.welcome-text{
+  font-family: 'Zeyada';
+  font-size: 3rem;
+}

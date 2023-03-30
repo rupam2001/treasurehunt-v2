@@ -6,6 +6,7 @@ import Landing from "./pages/Landing";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LeaderBoard from "./pages/LeaderBoard";
 
 // console.log = () => {};
 // console.error = () => {};
@@ -18,6 +19,8 @@ function App() {
           <Route path="/" exact element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/leaderboard" element={<LeaderBoard />} />
+
         </Routes>
       </BrowserRouter>
       <ToastContainer />

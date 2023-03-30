@@ -5,9 +5,15 @@ export default function Landing() {
   return (
     <div className="main">
       <div className="container-main">
-        <h1>Welcome to Treasure Hunt</h1>
+        <h1 className="welcome-text" >Welcome to Treasure Hunt</h1>
         <Link to={"/login"}>
-          <button>Login</button>
+          <div className="">
+            <button className="w-fit font-bold bg-white " >
+              <span style={{fontFamily:'Zeyada', fontSize:"2rem",}}>
+                Login
+              </span>
+              </button>
+          </div>
         </Link>
       </div>
     </div>

@@ -98,7 +98,7 @@ export default function DashBoard() {
       {isFinished && <Confetti width={400} height={4000} />}
       {isFinished && (
         <div className="congo animate__animated animate__bounceIn">
-          Congratulations! You have finshed the game!
+          Congratulations! You have found the Treasure!
         </div>
       )}
       <div className="container">
@@ -148,8 +148,9 @@ export default function DashBoard() {
           </div>
         </div>
       </div>
+      <h1 className="m-4 font-bold">Map  <span className="font-light text-red-500">(avoid red areas)</span></h1>
       <div className="map">
-        <img src="https://res.cloudinary.com/devzardcloud/image/upload/v1652515919/Desktop_-_1_veenid.png"></img>
+        <img src="https://res.cloudinary.com/rupamcloud/image/upload/v1680187550/TreasureHunt/WhatsApp_Image_2023-03-30_at_12.46.25_PM_ndjulk.jpg"></img>
       </div>
       <div className="footer border-t-2 mt-4 text-blue-600">
         Developed by GLUG

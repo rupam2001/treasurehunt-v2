@@ -17,6 +17,7 @@ export default function AnswerSubmissionCard({
   const onSubmit = async () => {
     setSubmitting(true);
     try {
+      let _code = code.replace(/^\s+|\s+$/g, '')
       const res = await fetch(
         ENDPOINT + (custom_route ? custom_route : "/answer/submit"),
         {
@@ -25,7 +26,7 @@ export default function AnswerSubmissionCard({
           body: JSON.stringify({
             team_id: localStorage.getItem("team_id"),
             passkey: localStorage.getItem("passkey"),
-            answer: code,
+            answer: _code,
             question_id: question._id,
           }),
         }
