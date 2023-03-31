@@ -3,6 +3,7 @@ import { ENDPOINT } from '../../constants';
 export default function LeaderBoard(){
 
     const [players, setPlayers] = useState([])
+    const [searchQ, setSearchQ] = useState("")
 
     const fetchPlayersAsyc = async ()  =>{
         try {
@@ -20,24 +21,35 @@ export default function LeaderBoard(){
 
     const sortPlayers = (_players) =>{
         
+        
+
+        //sort by finishing
+        _players.sort((a, b) =>{ 
+            let ftime_a = a.finished_at ? parseInt(a.finished_at): 0
+            let ftime_b = b.finished_at ? parseInt(b.finished_at): 0
+
+            return   ftime_a - ftime_b
+        })
+        console.log(_players, ",,")
+
+
+        const win_index = [..._players].findIndex((a)=> a.finished_at != null)
+        console.log(win_index, 'wi')
+
         //sort by questions solved so far
-        _players.sort((a, b) =>{
+        let not_win_players = _players.slice(0, win_index)
+        not_win_players.sort((a, b) =>{
             let alen = a.questions_solved.length;
             let blen = b.questions_solved.length;
-            if(alen != blen) return blen - alen;
             let time_a = new Date(a.updatedAt).getTime()
             let time_b = new Date(b.updatedAt).getTime()
-            return time_a - time_b
-
+            if(alen != blen) return alen - blen;
+            return time_b - time_a
         })
-        //sort by finishing
-        // _players.sort((a, b) =>{ 
-        //     let ftime_a = a.finished_at ? parseInt(a.finished_at): 0
-        //     let ftime_b = b.finished_at ? parseInt(b.finished_at): 0
+        // console.log(not_win_players)
+        _players = [..._players.slice(win_index, _players.length),...not_win_players.reverse()]
+        console.log(_players, "players")
 
-
-        //     return  ftime_b - ftime_a
-        // })
         return _players
 
     }
@@ -46,10 +58,15 @@ export default function LeaderBoard(){
         fetchPlayersAsyc()
     },[])
 
+   
 
-    return <div className='w-full flex justify-center'>
+
+    return <div className='w-full flex justify-center text-sm'>
         <div className='container'>
-            <h1>LEADERBOARD</h1>
+            <h1>LEADERBOARD ({players.length} teams)</h1>
+            {/* <div className='w-full flex justify-end py-2'>
+                <input placeholder='search by team id' className='border-2 border-gray-500 p-2' value={searchQ} onChange={onChangeSearch}/>
+            </div> */}
             <div className={`flex w-full justify-between p-4 my-2 bg-red-900 text-white` }>
                 <div className='flex-1'>
                     <h1>
@@ -62,13 +79,13 @@ export default function LeaderBoard(){
                     </h1>
                 </div>
                 <div className='flex-1'>
-                    <p>QUESTIONS SOLVED</p>
+                    <p>Questions solved</p>
                 </div>
                 <div className='flex-1'>
-                    FINISHED AT
+                    Finished
                 </div>
                 <div className='flex-1'>
-                    Won
+                    Finished at
                 </div>
             </div>
             {players.map((player, index) => <div className={`flex w-full justify-between p-4 my-2 ` + (player.finished_at ? "bg-green-300": "bg-gray-50")}>
@@ -86,10 +103,10 @@ export default function LeaderBoard(){
                     <p>{player.questions_solved.length}</p>
                 </div>
                 <div className='flex-1'>
-                {player.finished_at ?  <p>{new Date(parseInt(player.finished_at)).toLocaleString()}</p>: <p> ............ </p>}
+                    {player.finished_at ? <p><i className="fa-solid fa-check"></i></p>: <p> </p>}
                 </div>
                 <div className='flex-1'>
-                    {player.finished_at ? <p><i className="fa-solid fa-check"></i></p>: <p> </p>}
+                {player.finished_at ?  <p>{new Date(parseInt(player.finished_at)).toLocaleString()}</p>: <p> ............ </p>}
                 </div>
                 
             </div>)}

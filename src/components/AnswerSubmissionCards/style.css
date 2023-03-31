@@ -45,7 +45,7 @@ input[type="reset"] {
 .ans-input-container input {
   padding: 1rem;
   font-size: 1rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .ans-input-container button {
